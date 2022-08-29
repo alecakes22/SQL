@@ -1,0 +1,34 @@
+--CREATE a grocery store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, "oranges", "produce", 1.99, 50);
+INSERT INTO store VALUES (2, "turkey bacon", "meat", 4.99, 95);
+INSERT INTO store VALUES (3, "bananas", "produce", 0.99, 85);
+INSERT INTO store VALUES (4, " milk", "dairy", 3.99, 50);
+INSERT INTO store VALUES (5, "paper towels", "cleaning", 2.99, 65);
+INSERT INTO store VALUES (6, "mop", "cleaning", 9.99, 43);
+INSERT INTO store VALUES (7, "yogurt", "dairy", 2.50, 35);
+INSERT INTO store VALUES (8, "granola", "snack", 1.99, 24);
+INSERT INTO store VALUES (9, "lettuce", "produce", 1.99, 33);
+INSERT INTO store VALUES (10, "chocolate", "snack", 0.99, 10);
+INSERT INTO store VALUES (11, "broom", "cleaning", 6.99, 26);
+INSERT INTO store VALUES (12, "chicken", "meat", 5.99, 47);
+INSERT INTO store VALUES (13, "dish soap", "cleaning", 1.50, 14);
+INSERT INTO store VALUES (14, "blue cheese", "dairy", 6.50, 59);
+INSERT INTO store VALUES (15, "chips", "snack", 2.99, 12);
+
+--display the database ordered by proce.
+SELECT * FROM store
+ORDER BY price desc;
+
+--what is the avg price of items in snack section?
+SELECT AVG(price) "avg snack item price"
+FROM STORE
+WHERE section='snack';
+
+--most popular items
+SELECT item, price, popularity
+FROM store
+ORDER BY popularity asc
+limit 5;
