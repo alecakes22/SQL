@@ -1,0 +1,32 @@
+CREATE TABLE Person (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    First_name TEXT,
+    Last_name TEXT,
+    age INTEGER);
+    
+CREATE TABLE Hours (
+    Person_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Hrs_sleep INTEGER,
+    Hrs_work INTEGER,
+    Hrs_internet_browse INTEGER,
+    Mood TEXT); 
+
+INSERT INTO Person (First_name, Last_name, age) VALUES("Peter", "Parker", 17); 
+INSERT INTO Person (First_name, Last_name, age) VALUES("Tony", "Stark", 53);
+INSERT INTO Person (First_name, Last_name, age) VALUES("Steve", "Rodgers", 39);
+INSERT INTO Person (First_name, Last_name, age) VALUES("Bruce", "Banner", 60);
+
+/*data for Hours table*/
+
+INSERT INTO Hours (Hrs_sleep, Hrs_work, Hrs_internet_browse, Mood) VALUES(5, 2.5, 8, "Tired");
+INSERT INTO Hours (Hrs_sleep, Hrs_work, Hrs_internet_browse, Mood) VALUES(6, 9, 2, "Energized");
+INSERT INTO Hours (Hrs_sleep, Hrs_work, Hrs_internet_browse, Mood) VALUES(8, 8, 5, "Sleepy");
+INSERT INTO Hours (Hrs_sleep, Hrs_work, Hrs_internet_browse, Mood) VALUES(3, 12, 1, "Exhausted");
+
+SELECT * FROM Hours;
+SELECT * FROM Person;
+SELECT * FROM Person where age > 40;
+
+SELECT * FROM Person;
+UPDATE Hours set Mood = "Need more sleep" WHERE Person_id = 1;
+SELECT * FROM Hours;
