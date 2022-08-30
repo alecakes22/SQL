@@ -1,0 +1,17 @@
+CREATE TABLE singers (id INTEGER PRIMARY KEY, name TEXT, age INTEGER, monthly_listeners_in_millions INTEGER);
+
+INSERT INTO singers (name, age, monthly_listeners_in_millions) VALUES ("Ed Sheeran", 31, 81.41);
+INSERT INTO singers (name, age, monthly_listeners_in_millions) VALUES ("The Weeknd", 32, 78.84);
+INSERT INTO singers (name, age, monthly_listeners_in_millions) VALUES ("Justin Bieber", 28, 71.30);
+INSERT INTO singers (name, age, monthly_listeners_in_millions) VALUES ("Harry Styles", 28, 69.99);
+INSERT INTO singers (name, age, monthly_listeners_in_millions) VALUES ("Dua Lipa", 27, 69.29);
+
+CREATE TABLE popularity (id INTEGER PRIMARY KEY, spotify_id INTEGER, instagram_followers_in_millions INTEGER, nationality TEXT);
+INSERT INTO popularity (spotify_id, instagram_followers_in_millions, nationality) VALUES (1, 40.1, "English");
+INSERT INTO popularity (spotify_id, instagram_followers_in_millions, nationality) VALUES (2, 42.4, "Canadian");
+INSERT INTO popularity (spotify_id, instagram_followers_in_millions, nationality) VALUES (3, 255, "Canadian");
+INSERT INTO popularity (spotify_id, instagram_followers_in_millions, nationality) VALUES (4, 6.5, "English");
+INSERT INTO popularity (spotify_id, instagram_followers_in_millions, nationality) VALUES (5, 86.1, "English");
+
+SELECT * FROM popularity 
+WHERE instagram_followers_in_millions>50;
